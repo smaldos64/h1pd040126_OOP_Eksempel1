@@ -96,5 +96,42 @@ namespace Eksempel1
                 schoolName = value;
             }
         }
+
+        // Her er en OVERRIDE af den virtuelle metode ToString, som er arvet
+        // fra klassen Object. Det vil sige, at når man kalder ToString på
+        // et objekt af klassen StudentTeam, så vil denne metode blive kaldt
+        // i stedet for den oprindelige ToString metode i klassen Object.
+        public override string ToString()
+        {
+            //return base.ToString();
+            return ($"Team name : {this.teamName} - Number of students in team : {this.numberOfStudentsInTeam} - School name : {schoolName} -");
+        }
+
+        // Herunder er der 2 metoder, hvor de 2 første metoder benytter OVERLOADING.
+        // Det vil sige, at det er de angivne parametere, der afgør hvilken af de 2 metoder,
+        // der bliver kaldt.
+        // Det er ren skibidi crunch, at man kan kalde metoden AddNumbers med både int og
+        // double parametre, da det er de angivne parametere, der afgør hvilken metode,
+        // der bliver kaldt. Så den der kalder metoden behøver ikke at bekymre sig om
+        // hvilken metode, der bliver kaldt, da det er parametrene, der afgør det.
+        public int AddNumbers(int number1, int number2)
+        {
+            return (number1 + number2);
+        }
+
+        public double AddNumbers(double number1, double number2)
+        {
+            return (number1 + number2);
+        }
+
+        public int AddNumbersInt(int number1, int number2)
+        {
+            return (number1 + number2);
+        }
+
+        public double AddNumbersDouble(double number1, double number2)
+        {
+            return (number1 + number2);
+        }
     }
 }
